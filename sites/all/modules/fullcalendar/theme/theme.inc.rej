@@ -1,0 +1,12 @@
+--- theme/theme.inc
++++ theme/theme.inc
+@@ -35,6 +35,9 @@
+   $month_rows = $rows;
+   foreach ($rows as $weekno => $row) {
+     foreach ($row as $day => $data) {
++      if (!is_array($data)) {
++        continue;
++      }
+       $cell = $data['data'];
+ 
+       // If this cell is already rendered, like the weekno column,
